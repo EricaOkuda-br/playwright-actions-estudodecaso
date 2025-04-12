@@ -1,8 +1,8 @@
 import { test, expect, Page } from '@playwright/test';
 
 test('usuário obrigatório', async ({ page }) => {
-  await login(page, '', 'senha123')
-  await toast(page, 'Informe o seu nome de usuário!s')
+  await login(page, 'https://loginxp.vercel.app/', 'senha123')
+  await toast(page, 'Oops! Credenciais inválidas :(')
 });
 
 test('senha obrigatória', async ({ page }) => {
@@ -49,4 +49,3 @@ const login = async (page: Page, user: string, pass: string) => {
 
     await page.click('css=button >> text=Entrar')
 }
-
